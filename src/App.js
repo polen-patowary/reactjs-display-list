@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+ 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const Users = [
+  {
+    id: 1,
+    name: "Polen Patowary",
+    designation: "Software Developer",
+    company: "ABC Pvt. Ltd."
+  },
+  {
+    id: 2,
+    name: "John Doe",
+    designation: "Senior Software Developer",
+    company: "ABC Pvt. Ltd."
+  }
+  ];
+ 
+return (
+  <div>
+  <h4>List of employees</h4>
+<ul>
+{Users.map(data => (
+<li key={data.id}>
+<div>{data.name}</div>
+<div>{data.designation}</div>
+<div>{data.company}</div>
+</li>
+))}
+</ul>
+</div>
+);
 }
-
 export default App;
